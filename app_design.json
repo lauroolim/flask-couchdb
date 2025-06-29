@@ -1,0 +1,14 @@
+{
+  "_id": "_design/app",
+  "views": {
+    "notes_by_user": {
+      "map": "function(doc) { if(doc.type === 'note') emit(doc.user_id, doc); }"
+    },
+    "all_tags": {
+      "map": "function(doc) { if(doc.type === 'tag') emit(doc._id, doc); }"
+    },
+    "all_users": {
+      "map": "function(doc) { if(doc.type === 'user') emit(doc._id, doc); }"
+    }
+  }
+}
