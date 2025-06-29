@@ -1,0 +1,91 @@
+# Flask + CouchDB Notes App
+
+Uma aplicação web simples para gerenciar notas usando Flask e CouchDB como banco de dados NoSQL
+
+## Pré-requisitos
+
+- Docker
+- Docker Compose
+
+## Instalação e Execução
+
+1. **Clone o repositório:**
+```bash
+git clone https://github.com/lauroolim/flask-couchdb.git
+cd flask-couchdb
+```
+
+2. **Execute com Docker Compose:**
+```bash
+docker-compose up --build -d
+```
+
+3. **Acesse a aplicação:**
+- Web: http://localhost:5000
+- CouchDB Fauxton (Interface Web): http://localhost:5984/_utils
+
+### CouchDB
+
+- **Usuário:** admin
+- **Senha:** root
+- **Porta:** 5984
+- **Database:** notes_db 
+
+### Comandos Úteis
+
+```bash
+# Iniciar os serviços
+docker-compose up
+
+# Iniciar com rebuild
+docker-compose up --build
+
+# Parar os serviços
+docker-compose down
+
+# Ver logs
+docker-compose logs app
+docker-compose logs couchdb
+
+# Limpar volumes e containers
+docker-compose down -v
+```
+
+### Executar localmente (sem Docker)
+
+1. **Instale as dependências:**
+```bash
+pip install -r requirements.txt
+```
+
+2. **Configure a variável de ambiente:**
+```bash
+export COUCHDB_URL=http://admin:root@localhost:5984/
+```
+
+3. **Execute a aplicação:**
+```bash
+python app.py
+```
+
+## CouchDB
+
+O CouchDB armazena as notas no seguinte formato:
+
+```json
+{
+  "id": "document_id",
+  "key": "document_key", 
+  "value": {"rev": "revision"},
+  "doc": {
+    "title": "Título da nota",
+    "content": "Conteúdo da nota"
+  }
+}
+```
+
+## Links Úteis
+
+- [Flask Documentation](https://flask.palletsprojects.com/)
+- [CouchDB Documentation](https://docs.couchdb.org/)
+- [Bootstrap Documentation](https://getbootstrap.com/docs/)
