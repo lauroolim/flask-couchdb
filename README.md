@@ -77,6 +77,15 @@ O CouchDB armazena os dados em formato JSON. A estrutura básica de um documento
 ```
 obs.: O `type` pode ser `user`, `tag` ou `note` dependendo do tipo de documento
 
+## Deploy do Design Document
+
+As views usadas pela aplicação estão definidas em `app_design.json`. Para subir (ou atualizar) o design document no CouchDB, execute o script dentro do container Flask se estiver usando Docker, ou execute diretamente se estiver rodando localmente:
+
+```bash
+chmod +x app_design_deploy.sh
+./app_design_deploy.sh
+```
+
 ## Links Úteis
 
 - [Flask Documentation](https://flask.palletsprojects.com/)
