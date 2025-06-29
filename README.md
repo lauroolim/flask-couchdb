@@ -74,15 +74,15 @@ O CouchDB armazena as notas no seguinte formato:
 
 ```json
 {
-  "id": "document_id",
-  "key": "document_key", 
-  "value": {"rev": "revision"},
-  "doc": {
-    "title": "Título da nota",
-    "content": "Conteúdo da nota"
-  }
+  "_id": "document_id",
+  "_rev": "revision_id",
+  "type": "user",
+  "name": "teste",
+  "email": "teste@teste.com",
+  "created_at": "2025-06-29T12:43:02.943267Z"
 }
 ```
+obs.: O `type` pode ser `user`, `tag` ou `note` dependendo do tipo de documento
 
 ## Links Úteis
 
