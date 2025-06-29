@@ -63,7 +63,7 @@ python app.py
 
 ## CouchDB
 
-O CouchDB armazena as notas no seguinte formato:
+O CouchDB armazena os dados em formato JSON. A estrutura básica de um documento é a seguinte:
 
 ```json
 {
