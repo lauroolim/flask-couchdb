@@ -24,13 +24,6 @@ docker-compose up --build -d
 - Web: http://localhost:5000
 - CouchDB Fauxton (Interface Web): http://localhost:5984/_utils
 
-### CouchDB
-
-- **Usuário:** admin
-- **Senha:** root
-- **Porta:** 5984
-- **Database:** notes_db 
-
 ### Comandos Úteis
 
 ```bash
